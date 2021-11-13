@@ -1,0 +1,16 @@
+{
+  "short_name": "190桌面系统",
+  "name": "190桌面系统",
+  "description": "这是一个测试网页 ©iml6yu", 
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    } 
+  ],
+  "start_url": "index.html",
+  "background_color": "#3f51b5",
+  "display": "standalone", 
+  "theme_color": "#3f51b5" 
+}

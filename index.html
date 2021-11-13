@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>这是一个可以安装到桌面的网页</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h3>Hello 这是一个可以安装到桌面的网页</h3>
+   <div id="installContainer">
+       用谷歌浏览器打开，看一下地址栏后面有一个安装的图标，安装一下试试吧
+    </div>
+</body>
+<script>
+  // 检测浏览器是否支持SW
+  if(navigator.serviceWorker != null){
+    navigator.serviceWorker.register('sw.js')
+    .then(function(registartion){
+      console.log('支持sw:',registartion.scope)
+    })
+  }else{
+      console.log('不支持SW:')
+  }
+  
+ // Initialize deferredPrompt for use later to show browser install prompt.
+// let deferredPrompt;
+
+// window.addEventListener('beforeinstallprompt', (e) => {
+//   // Prevent the mini-infobar from appearing on mobile
+//   e.preventDefault();
+//   // Stash the event so it can be triggered later.
+//   deferredPrompt = e;
+//   // Update UI notify the user they can install the PWA
+//   showInstallPromotion();
+//   // Optionally, send analytics event that PWA install promo was shown.
+//   console.log(`'beforeinstallprompt' event was fired.`);
+// });
+
+// window.addEventListener('appinstalled', () => {
+//   // Hide the app-provided install promotion
+//   hideInstallPromotion();
+//   // Clear the deferredPrompt so it can be garbage collected
+//   deferredPrompt = null;
+//   // Optionally, send analytics event to indicate successful install
+//   console.log('PWA was installed');
+// });
+</script>
+</html>
